@@ -1,0 +1,27 @@
+[project]
+name = "backtesting-framework"
+version = "0.1.0"
+description = "Pure Python backtesting/trading framework inspired by NautilusTrader"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "pandas>=1.5",
+    "py-clob-client>=0.34.5",
+    "python-dotenv>=1.2.1",
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+live = [
+    "py-clob-client>=0.34",
+    "python-dotenv>=1.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=7.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["nautilus_core*", "polymarket*"]
